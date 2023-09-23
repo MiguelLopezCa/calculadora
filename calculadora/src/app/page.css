@@ -1,0 +1,79 @@
+/* Contenedor principal */
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Dos columnas, una para los botones y otra para operaciones */
+  gap: 50px;
+  align-items: center; /* Centra verticalmente */
+}
+
+/* Texto y etiqueta */
+.label {
+  grid-column: 1 / span 2; /* Ocupa dos columnas */
+  text-align: center;
+  font-size: 24px;
+}
+
+/* Contenedor de botones */
+.buttons-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres botones por fila */
+  gap: 400px;
+}
+
+/* Botones numéricos */
+button.numeric {
+  width: 100%; /* Los botones ocupan el 100% del ancho del contenedor */
+  height: 70px;
+  font-size: 24px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+button.numeric:hover {
+  background-color: #e0e0e0;
+}
+
+/* Contenedor de operaciones */
+.operations-container {
+  display: flex;
+  flex-direction: column; /* Los botones de operaciones se colocarán uno debajo del otro */
+}
+
+/* Botones de operaciones */
+button.operation {
+  width: 100%;
+  height: 70px;
+  font-size: 64px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 10px; /* Espacio entre los botones de operaciones */
+}
+
+button.operation:hover {
+  background-color: #e0e0e0;
+}
+
+/* Display de la calculadora */
+.display {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+}
+
+input[type="text"] {
+  border: none;
+  outline: none;
+  font-size: 24px;
+  width: 100%;
+}
+
+.result {
+  font-size: 36px;
+  text-align: right;
+  margin-left: 10px; /* Espacio entre el input y el resultado */
+}
