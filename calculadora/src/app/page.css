@@ -1,34 +1,72 @@
-.container {
-  display: grid;
-  grid-template-rows: auto auto ;
+*{
+  font-size: 30px;
+}
+.todo {
+  width: 300px;
   height: 300px;
-  justify-items: center;
-  align-items: center;
-  width: 800px;
-}
-
-.resultado {
+  margin: auto;
   display: grid;
-  grid-template-rows: auto auto;
-  width: 800px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  background-color: #f5f5f5;
+  grid-template-areas:
+    "cabecera cabecera"
+    "numeros operaciones";
 }
 
-button {
-  width: 70px;
-  height: 70px;
-  font-size: 24px;
-  border: none;
-  outline: none;
-  cursor: pointer;
+.cabecera {
+  grid-area: cabecera;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  flex-direction: column; /* Apila elementos verticalmente */
+  text-align: center;
+}
+.label{
+  width: 100%;}
+.re{
+  width: 96%; 
+  height: 40px;
+}
+
+.numeros {
+  grid-area: numeros;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-content: center;
+  
+}
+.button0 {
+  grid-column: 2 / span 1;
 }
 
 .operaciones {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-auto-rows: min-content;
-  gap: 10px;
-  align-content: start;
+  grid-area: operaciones;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilos para los botones de números */
+.numeros button {
+  background-color: #ccc;
+  color: #333;
+  padding: 3px;
+  margin: 2px;
+  border: none;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+}
+
+/* Estilos para los botones de operaciones */
+.operaciones button {
+  background-color: #828282;
+  color: #fff;
+  padding: 5px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  width: 39px;
+  height: 39px;
+
 }

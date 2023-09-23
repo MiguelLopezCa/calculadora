@@ -4,7 +4,7 @@ import styles from './page.css';
 
 const CalculatorComponent = () => {
   const [input, setInput] = useState('');
-  const [result, setResult] = useState('');
+
   const agregarCero = () => {
     setInput((prevInput) => prevInput + '0');
   };
@@ -67,73 +67,57 @@ const CalculatorComponent = () => {
       setInput((prevInput) => prevInput + '/');
     }
   };
-  
-  const calcularResultado = () => {
-    try {
-      setResult(eval(input).toString());
-    } catch (error) {
-      setResult('Error');
-    }
-  };
-  
-  const borrar = () => {
-    setInput('');
-    setResult('');
-  };
   const calcularPorcentaje = () => {
     try {
       const resultado = eval(input);
-      const porcentaje = resultado / 100;
-      setInput(porcentaje.toString());
-      setResult('');
+      const porcentaje = (resultado * 0.01).toString(); // Dividir por 100 para obtener el porcentaje
+      setInput(porcentaje);
     } catch (error) {
       setInput('Error');
-      setResult('');
     }
   };
   
+  const calcularResultado = () => {
+    try {
+      setInput(eval(input).toString());
+    } catch (error) {
+      setInput('Error');
+    }
+  };
+
+  const borrar = () => {
+    setInput('');
+  };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.label}>Calculadora</div>
-
-      <div className={styles.resultado}>
-        <input type="text" value={input} readOnly />
-        <div className={styles.result}>{result}</div>
-      </div>
+    <main class="todo">
+      <header class="cabecera">
+        <label class="label">Calculadora</label>
+        <input class="re" type="text" value={input} readOnly />
+      </header>
       
-      <div className={styles.buttons7a9}>
-        <button onClick={agregarSiete}>7</button>
-        <button onClick={agregarOcho}>8</button>
-        <button onClick={agregarNueve}>9</button>
-      </div>
-
-        <div className={styles.buttons4a6}>  
-
-        <button onClick={agregarCuatro}>4</button>
-        <button onClick={agregarCinco}>5</button>
-        <button onClick={agregarSeis}>6</button>
-        </div>
-
-        <div className={styles.buttons1a3}>
-        <button onClick={agregarUno}>1</button>
-        <button onClick={agregarDos}>2</button>
-        <button onClick={agregarTres}>3</button>
-        </div>
-        <div className={styles.button0}>
-        <button onClick={agregarCero}>0</button>
-        </div>
-
-      <div className={styles.operaciones}>
-        <button onClick={calcularPorcentaje}>%</button>
-        <button onClick={sumar}>+</button>
-        <button onClick={restar}>-</button>
-        <button onClick={multiplicar}>*</button>
-        <button onClick={dividir}>/</button>
-        <button onClick={calcularResultado}>=</button>
-        <button onClick={borrar}>C</button>
-      </div>
-    </div>
+      <nav class="numeros">
+            <button class="button7" onClick={agregarSiete}>7</button>
+            <button class="button8" onClick={agregarOcho}>8</button>
+            <button class="button9" onClick={agregarNueve}>9</button>
+            <button class="button4" onClick={agregarCuatro}>4</button>
+            <button class="button5" onClick={agregarCinco}>5</button>
+            <button class="button6" onClick={agregarSeis}>6</button>
+            <button class="button1" onClick={agregarUno}>1</button>
+            <button class="button2" onClick={agregarDos}>2</button>
+            <button class="button3" onClick={agregarTres}>3</button>
+            <button class="button0" onClick={agregarCero}>0</button>
+        </nav>
+        <section class="operaciones">
+              <button class="buttonPor" onClick={calcularPorcentaje}>%</button>
+              <button class="buttonMas" onClick={sumar}>+</button>
+              <button class="buttonMenos" onClick={restar}>-</button>
+              <button class="buttonMul" onClick={multiplicar}>*</button>
+              <button class="buttonDiv" onClick={dividir}>/</button>
+              <button class="buttonRes" onClick={calcularResultado}>=</button>
+              <button class="buttonBor" onClick={borrar}>C</button>
+        </section>
+    </main>
   );
 };
 
