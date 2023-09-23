@@ -1,80 +1,34 @@
-/* Contenedor principal */
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Dos columnas, una para los botones y otra para operaciones */
-  gap: 10px;
-  align-items: center; /* Centra verticalmente */
+  grid-template-rows: auto auto ;
+  height: 300px;
+  justify-items: center;
+  align-items: center;
+  width: 800px;
 }
 
-/* Texto y etiqueta */
-.label {
-  grid-column: 1 / span 2; /* Ocupa dos columnas */
-  text-align: center;
-  font-size: 24px;
-}
-
-/* Contenedor de botones */
-.buttonsContainer {
+.resultado {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Tres botones por fila */
-  gap: 10px;
-}
-
-/* Botones numéricos */
-.numeric {
-  width: 100%; /* Los botones ocupan el 100% del ancho del contenedor */
-  height: 100px; /* Aumentamos la altura para hacerlos más grandes */
-  font-size: 36px; /* Aumentamos el tamaño del texto */
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-
-.numeric:hover {
-  background-color: #e0e0e0;
-}
-
-/* Contenedor de operaciones */
-.operationsContainer {
-  display: flex;
-  flex-direction: column; /* Los botones de operaciones se colocarán uno debajo del otro */
-}
-
-/* Botones de operaciones */
-.operation {
-  width: 100%;
-  height: 100px; /* Aumentamos la altura para hacerlos más grandes */
-  font-size: 36px; /* Aumentamos el tamaño del texto */
-  border: none;
-  outline: none;
-  cursor: pointer;
-  margin-bottom: 10px; /* Espacio entre los botones de operaciones */
-}
-
-.operation:hover {
-  background-color: #e0e0e0;
-}
-
-/* Display de la calculadora */
-.display {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  grid-column: 1 / span 2; /* Ocupa dos columnas */
-  width: 300px;
+  grid-template-rows: auto auto;
+  width: 800px;
   padding: 10px;
   border: 1px solid #ccc;
   background-color: #f5f5f5;
 }
 
-input[type="text"] {
+button {
+  width: 70px;
+  height: 70px;
+  font-size: 24px;
   border: none;
   outline: none;
-  font-size: 24px;
-  width: 100%;
+  cursor: pointer;
 }
 
-.result {
-  font-size: 36px;
-  text-align: right;
-  margin-left: 10px; /* Espacio entre el input y el resultado */
+.operaciones {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: min-content;
+  gap: 10px;
+  align-content: start;
 }
