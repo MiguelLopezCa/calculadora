@@ -6,7 +6,7 @@ const CalculatorComponent = () => {
   const [input, setInput] = useState('');
   const [result, setResult] = useState('');
 
-  const handleButtonClick = (value) => {
+  const hacerClick = (value) => {
     if (value === '=') {
       try {
         setResult(eval(input).toString());
@@ -22,43 +22,37 @@ const CalculatorComponent = () => {
   };
 
   return (
-  <div className={styles.container}>
-  <div className={styles.label}>Calculadora</div>
+    <div className={styles.container}>
+      <div className={styles.label}>Calculadora</div>
 
-  <div className={styles.display}>
-    <input type="text" value={input} readOnly />
-    <div className={styles.result}>{result}</div>
-  </div>
+      <div className={styles.display}>
+        <input type="text" value={input} readOnly />
+        <div className={styles.result}>{result}</div>
+      </div>
 
-  <div className={styles.buttonsContainer}>
-    <button className={styles.numeric} onClick={() => handleButtonClick('7')}>7</button>
-    <button className={styles.numeric} onClick={() => handleButtonClick('8')}>8</button>
-    <button className={styles.numeric} onClick={() => handleButtonClick('9')}>9</button>
-  </div>
-  <div className={styles.buttonsContainer}>
-    <button className={styles.numeric} onClick={() => handleButtonClick('4')}>4</button>
-    <button className={styles.numeric} onClick={() => handleButtonClick('5')}>5</button>
-    <button className={styles.numeric} onClick={() => handleButtonClick('6')}>6</button>  
-  </div>
-  <div className={styles.buttonsContainer}>
-    <button className={styles.numeric} onClick={() => handleButtonClick('1')}>1</button>
-    <button className={styles.numeric} onClick={() => handleButtonClick('2')}>2</button>
-    <button className={styles.numeric} onClick={() => handleButtonClick('3')}>3</button>
-  </div>
-  <div className={styles.operationsContainer}>
-    <button className={styles.operation} onClick={() => handleButtonClick('C')}>C</button>
-    <button className={styles.operation} onClick={() => handleButtonClick('%')}>%</button>
-    <button className={styles.operation} onClick={() => handleButtonClick('+')}>+</button>
-    <button className={styles.operation} onClick={() => handleButtonClick('-')}>-</button>
-    <button className={styles.operation} onClick={() => handleButtonClick('/')}>/</button>
-    <button className={styles.operation} onClick={() => handleButtonClick('*')}>*</button>
-    <button className={styles.operation} onClick={() => handleButtonClick('=')}>=</button>
-  </div>
-  
-</div>
-    
+      <div className={styles.buttonsContainer}>
+        <button className={styles.numeric} onClick={() => hacerClick('7')}>7</button>
+        <button className={styles.numeric} onClick={() => hacerClick('8')}>8</button>
+        <button className={styles.numeric} onClick={() => hacerClick('9')}>9</button>
+        <button className={styles.numeric} onClick={() => hacerClick('4')}>4</button>
+        <button className={styles.numeric} onClick={() => hacerClick('5')}>5</button>
+        <button className={styles.numeric} onClick={() => hacerClick('6')}>6</button>  
+        <button className={styles.numeric} onClick={() => hacerClick('1')}>1</button>
+        <button className={styles.numeric} onClick={() => hacerClick('2')}>2</button>
+        <button className={styles.numeric} onClick={() => hacerClick('3')}>3</button>
+      </div>
+
+      <div className={styles.operationsContainer}>
+        <button className={styles.operation} onClick={() => hacerClick('C')}>C</button>
+        <button className={styles.operation} onClick={() => hacerClick('%')}>%</button>
+        <button className={styles.operation} onClick={() => hacerClick('+')}>+</button>
+        <button className={styles.operation} onClick={() => hacerClick('-')}>-</button>
+        <button className={styles.operation} onClick={() => hacerClick('/')}>/</button>
+        <button className={styles.operation} onClick={() => hacerClick('*')}>*</button>
+        <button className={styles.operation} onClick={() => hacerClick('=')}>=</button>
+      </div>
+    </div>
   );
 };
 
 export default CalculatorComponent;
-

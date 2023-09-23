@@ -1,8 +1,8 @@
 /* Contenedor principal */
 .container {
   display: grid;
-  grid-template-columns: 2fr 1fr; /* Dos columnas, una para los botones y otra para operaciones */
-  gap: 50px;
+  grid-template-columns: 1fr 1fr; /* Dos columnas, una para los botones y otra para operaciones */
+  gap: 10px;
   align-items: center; /* Centra verticalmente */
 }
 
@@ -14,44 +14,44 @@
 }
 
 /* Contenedor de botones */
-.buttons-container {
+.buttonsContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Tres botones por fila */
-  gap: 400px;
+  gap: 10px;
 }
 
 /* Botones numéricos */
-button.numeric {
+.numeric {
   width: 100%; /* Los botones ocupan el 100% del ancho del contenedor */
-  height: 70px;
-  font-size: 24px;
+  height: 100px; /* Aumentamos la altura para hacerlos más grandes */
+  font-size: 36px; /* Aumentamos el tamaño del texto */
   border: none;
   outline: none;
   cursor: pointer;
 }
 
-button.numeric:hover {
+.numeric:hover {
   background-color: #e0e0e0;
 }
 
 /* Contenedor de operaciones */
-.operations-container {
+.operationsContainer {
   display: flex;
   flex-direction: column; /* Los botones de operaciones se colocarán uno debajo del otro */
 }
 
 /* Botones de operaciones */
-button.operation {
+.operation {
   width: 100%;
-  height: 70px;
-  font-size: 64px;
+  height: 100px; /* Aumentamos la altura para hacerlos más grandes */
+  font-size: 36px; /* Aumentamos el tamaño del texto */
   border: none;
   outline: none;
   cursor: pointer;
   margin-bottom: 10px; /* Espacio entre los botones de operaciones */
 }
 
-button.operation:hover {
+.operation:hover {
   background-color: #e0e0e0;
 }
 
@@ -59,6 +59,7 @@ button.operation:hover {
 .display {
   display: grid;
   grid-template-rows: 1fr auto;
+  grid-column: 1 / span 2; /* Ocupa dos columnas */
   width: 300px;
   padding: 10px;
   border: 1px solid #ccc;
